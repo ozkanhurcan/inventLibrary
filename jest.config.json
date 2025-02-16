@@ -1,0 +1,27 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "roots": ["<rootDir>/src", "<rootDir>/test"],
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/src/$1",
+    "^@entities/(.*)$": "<rootDir>/src/entities/$1",
+    "^@controllers/(.*)$": "<rootDir>/src/controllers/$1",
+    "^@services/(.*)$": "<rootDir>/src/services/$1",
+    "^@config/(.*)$": "<rootDir>/src/config/$1",
+    "^@middleware/(.*)$": "<rootDir>/src/middleware/$1",
+    "^@middlewares/(.*)$": "<rootDir>/src/middleware/$1",
+    "^@routes/(.*)$": "<rootDir>/src/routes/$1",
+    "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^@test/(.*)$": "<rootDir>/test/$1"
+  },
+  "setupFilesAfterEnv": ["<rootDir>/test/setup.ts"],
+  "testMatch": ["**/*.test.ts", "**/*.spec.ts"],
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/migrations/**",
+    "!src/test/**",
+    "!src/**/index.ts",
+    "!src/server.ts"
+  ],
+  "testTimeout": 30000
+} 
